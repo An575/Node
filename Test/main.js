@@ -44,4 +44,41 @@
 //__dirname 表示当前执行脚本所在的目录。
 //console.log(__dirname);
 
+//6.退出事件
+// process.on('exit',function(code){
+//     setTimeout(function(){
+//         console.log("该段代码不能执行！");
+//     },0)
+// console.log("退出码为:",code);
 
+// });
+// console.log("程序执行结束！");
+
+//7.util.inherits(constructor, superConstructor)是一个实现对象间原型继承 的函数。 
+ var util=require('util');
+ function Base(){
+     this.name="Base";
+     this.base=1991;
+     this.sayHello=function(){
+         console.log('Hello'+this.name);
+     };
+ }
+ //原型中定义的函数
+ Base.prototype.showName=function(){
+     console.log(this.name);
+ }
+
+ function Sub(){
+     this.name="sub"
+ }
+ util.inherits(Sub,Base);
+ var objBase=new Base();
+ objBase.showName();
+ objBase.sayHello();
+ console.log(objBase);
+
+ var objSub=new Sub();
+ objSub.showName();
+ //objSub.sayHello();//错误，无法继承构造函数内的属性及函数
+console.log(util.inspect(objSub));
+ console.log(objSub);

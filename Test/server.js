@@ -1,4 +1,4 @@
-// var http=require('http');
+ var http=require('http');
 
 // http.createServer(function (request,response) {
 //     //发送HTTP头部
@@ -12,7 +12,6 @@
 
 // console.log('Server running at http://127.0.0.1:8888/');
 
-var http = require('http');
 var url = require('url');
 var util = require('util');
  
